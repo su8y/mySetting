@@ -1,0 +1,150 @@
+{
+  "title": "War3",
+  "rules": [
+    {
+      "description": "war3",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "1"
+          },
+          "to": [
+            {
+              "key_code": "keypad_7"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [ "net.battle.bootstrapper","com.blizzard.WarcraftIII"]
+            }
+          ]
+        },
+        {
+            "type": "basic",
+            "from": {
+              "key_code": "2"
+            },
+            "to": [
+              {
+                "key_code": "keypad_8"
+              }
+            ],
+            "conditions": [
+              {
+                "type": "frontmost_application_if",
+                "bundle_identifiers": [
+              "net.battle.bootstrapper","com.blizzard.WarcraftIII"]
+              }
+            ]
+          },
+          {
+            "type": "basic",
+            "from": {
+              "key_code": "3"
+            },
+            "to": [
+              {
+                "key_code": "keypad_4"
+              }
+            ],
+            "conditions": [
+              {
+                "type": "frontmost_application_if",
+                "bundle_identifiers": [
+              "net.battle.bootstrapper","com.blizzard.WarcraftIII"]
+              }
+            ]
+          },        {
+            "type": "basic",
+            "from": {
+              "key_code": "4"
+            },
+            "to": [
+              {
+                "key_code": "keypad_5"
+              }
+            ],
+            "conditions": [
+              {
+                "type": "frontmost_application_if",
+                "bundle_identifiers": [
+              "net.battle.bootstrapper","com.blizzard.WarcraftIII"]
+              }
+            ]
+          },        {
+            "type": "basic",
+            "from": {
+              "key_code": "5"
+            },
+            "to": [
+              {
+                "key_code": "keypad_1"
+              }
+            ],
+            "conditions": [
+              {
+                "type": "frontmost_application_if",
+                "bundle_identifiers": [
+              "net.battle.bootstrapper","com.blizzard.WarcraftIII"]
+              }
+            ]
+          },        {
+            "type": "basic",
+            "from": {
+              "key_code": "6"
+            },
+            "to": [
+              {
+                "key_code": "keypad_2"
+              }
+            ],
+            "conditions": [
+              {
+                "type": "frontmost_application_if",
+                "bundle_identifiers": [
+              "net.battle.bootstrapper","com.blizzard.WarcraftIII"]
+              }
+            ]
+          },        
+          {
+            "type": "basic",
+            "from": {
+              "key_code": "tab"
+            },
+            "to": [
+              {
+                "key_code": "o"
+              }
+            ],
+            "conditions": [
+              {
+                "type": "frontmost_application_if",
+                "bundle_identifiers": [
+              "net.battle.bootstrapper","com.blizzard.WarcraftIII"]
+              }
+            ]
+          },
+          {
+            "type": "basic",
+            "from": {
+              "key_code": "spacebar"
+            },
+            "to": [
+              {
+                "key_code": "f1"
+              }
+            ],
+            "conditions": [
+              {
+                "type": "frontmost_application_if",
+                "bundle_identifiers": [
+              "net.battle.bootstrapper","com.blizzard.WarcraftIII"]
+              }
+            ]
+          }
+      ]
+    }
+  ]
+}
