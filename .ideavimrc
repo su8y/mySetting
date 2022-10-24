@@ -50,7 +50,7 @@ nmap <CR> o<Esc>
 " Quit visual mode
 vnoremap v <Esc>
 
-nnoremap <Esc> <Esc>:w<CR>
+nnoremap <esc> :noh<cr>:w<cr><esc>
 inoremap <Esc> <Esc>:w<CR>
 noremap H ^
 noremap L $
@@ -60,7 +60,6 @@ nnoremap <leader>h gT
 " mehotd up
 nmap [[ <Action>(MethodUp)
 nmap ]] <Action>(MethodDown)
-
 nmap gb <Action>(Back)
 nmap gD <Action>(GotoTypeDeclaration)
 nmap gf <Action>(Forward)
@@ -70,6 +69,14 @@ nmap gn <Action>(GotoNextError)
 nmap gp <Action>(GotoPreviousError)
 nmap gy <Action>(ShowErrorDescription)
 
+    " EditorIndentLineOrSelection
+" EditorIndentSelection
+" EditorToggleShowIndentLines
+" EditorUnindentSelection
+" nmap > <S-v>:action EditorIndentSelection<cr>
+" nmap < <S-v>:action EditorUnindentSelection<cr>
+vmap > <Action>(EditorIndentSelection)
+vmap < <Action>(EditorUnindentSelection)
 
 " moving row"
 nnoremap <C-j> :m +1<CR>
