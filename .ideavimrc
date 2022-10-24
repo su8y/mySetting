@@ -73,8 +73,8 @@ nmap gy <Action>(ShowErrorDescription)
 " EditorIndentSelection
 " EditorToggleShowIndentLines
 " EditorUnindentSelection
-" nmap > <S-v>:action EditorIndentSelection<cr>
-" nmap < <S-v>:action EditorUnindentSelection<cr>
+nmap > <S-v>:action EditorIndentSelection<cr>
+nmap < <S-v>:action EditorUnindentSelection<cr>
 vmap > <Action>(EditorIndentSelection)
 vmap < <Action>(EditorUnindentSelection)
 
