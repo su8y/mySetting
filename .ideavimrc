@@ -8,8 +8,6 @@ set ignorecase
 set smartcase
 " 3 lines above/below cursor when scrolling
 set scrolloff=3
-set clipboard=unnamed
-
 set highlightedyank
 set NERDTree
 set surround
@@ -18,9 +16,13 @@ set easymotion
 set quickscope " 한줄에서 빠르게 단어찾기 f F
 set sneak
 
+
+
 "vim highlightedyank
 let g:highlightedyank_highlight_duration = "1000"
 
+set visualbell
+set noerrorbells
 set number relativenumber
 set ignorecase
 set smartcase
@@ -39,6 +41,9 @@ noremap <leader>kz :action ToggleZenMode<CR>
 noremap H ^
 noremap L $
 
+
+
+
 " toggle sidebar
 nmap <C-e> :NERDTreeFocus<cr>
 " These create newlines like o and O but stay in normal mode
@@ -48,8 +53,13 @@ imap jk <Esc>
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
 " Quit visual mode
+nnoremap Y y$
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>p "+p
+nnoremap <leader>a ggVG
+vnoremap <leader>a ggVG
 vnoremap v <Esc>
-
 nnoremap <esc> :noh<cr>:w<cr><esc>
 inoremap <Esc> <Esc>:w<CR>
 noremap H ^
@@ -60,6 +70,8 @@ nnoremap <leader>h gT
 " mehotd up
 nmap [[ <Action>(MethodUp)
 nmap ]] <Action>(MethodDown)
+
+" goto Error and Declaration"
 nmap gb <Action>(Back)
 nmap gD <Action>(GotoTypeDeclaration)
 nmap gf <Action>(Forward)
@@ -69,10 +81,7 @@ nmap gn <Action>(GotoNextError)
 nmap gp <Action>(GotoPreviousError)
 nmap gy <Action>(ShowErrorDescription)
 
-    " EditorIndentLineOrSelection
-" EditorIndentSelection
-" EditorToggleShowIndentLines
-" EditorUnindentSelection
+"Editor indent"
 nmap > <S-v>:action EditorIndentSelection<cr>
 nmap < <S-v>:action EditorUnindentSelection<cr>
 vmap > <Action>(EditorIndentSelection)
@@ -96,16 +105,16 @@ nnoremap <leader>vr :source ~/.ideavimrc<CR>
 
 
 " Refactorings
-map T <Action>(Refactorings.QuickListPopupAction)
-map tr <Action>(RenameElement)
+map <leader>t <Action>(Refactorings.QuickListPopupAction)
+map Tr <Action>(RenameElement)
 " SurroundWith
-map ts <Action>(SurroundWith)
+map Ts <Action>(SurroundWith)
 " VSC Popup
-nmap tv <Action>(Vcs.QuickListPopupAction)
+nmap Tv <Action>(Vcs.QuickListPopupAction)
 " Inspectiom
-nmap ti <Action>(InspectCode)
-map ta <Action>(AnalyzeActionsPopup)
-nmap to <Action>(OptimiziImports)
+nmap Ti <Action>(InspectCode)
+map Ta <Action>(AnalyzeActionsPopup)
+nmap To <Action>(OptimiziImports)
 
 " Closing tabs
 nmap <leader>q :action CloseContent<cr>
@@ -124,7 +133,7 @@ nmap <leader>; :action FileStructurePopup<cr>
 nmap <leader>d :action ShowErrorDescription<cr>
 nmap <leader>I :action SelectIn<cr>
 nmap <leader>e :action RecentFiles<cr>
-nmap <leader>t :action GotoTest<cr>
+nmap <leader>T :action GotoTest<cr>
 nmap <leader>b :action ShowBookmarks<cr>
 
 map <C-N>  <A-N>
