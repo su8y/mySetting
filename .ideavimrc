@@ -1,31 +1,16 @@
 " english auto change
 let keep_input_source_in_normal=[ABC]
 let keep_input_source_in_normal=ABC
-
 set keep-english-in-normal-and-restore-in-insert
+
 let mapleader = " "
 set ignorecase
 set smartcase
-" 3 lines above/below cursor when scrolling
-set scrolloff=3
-set highlightedyank
-set NERDTree
-set surround
-set multiple-cursors
-set easymotion
-set quickscope " 한줄에서 빠르게 단어찾기 f F
-set sneak
-
-
-
-"vim highlightedyank
-let g:highlightedyank_highlight_duration = "1000"
-
 set visualbell
-set noerrorbells
 set number relativenumber
 set ignorecase
 set smartcase
+set noerrorbells
 set expandtab
 set autoindent
 set hlsearch
@@ -33,30 +18,42 @@ set incsearch
 set ideajoin
 set mouse=a
 set idearefactormode=keep
-app mousefocus
+set mousefocus
 set scollfocus
+set scrolloff=3
+set highlightedyank
 
-" zen mode"
-noremap <leader>kz :action ToggleZenMode<CR>
+" 3 lines above/below cursor when scrolling
+set NERDTree
+set surround
+set multiple-cursors
+set easymotion
+set quickscope
+set sneak
+
+
+" essential
+imap jk <Esc>
+imap ㅓㅏ <Esc>
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
+
 noremap H ^
 noremap L $
 
-
-
-
 " toggle sidebar
 nmap <C-e> :NERDTreeFocus<cr>
+
 " These create newlines like o and O but stay in normal mode
-"nmap zj o<Esc>k
-"nmap zk O<Esc>j
-imap jk <Esc>
-nmap <S-Enter> O<Esc>
-nmap <CR> o<Esc>
+
+" zen mode
+noremap <leader>kz :action ToggleZenMode<CR>
+
 " Quit visual mode
-nnoremap Y y$
 nnoremap <leader>y "+y
-vnoremap <leader>y "+y
 nnoremap <leader>p "+p
+vnoremap <leader>y "+y
+nnoremap Y y$
 nnoremap <leader>a ggVG
 vnoremap <leader>a ggVG
 vnoremap v <Esc>
@@ -64,9 +61,11 @@ nnoremap <esc> :noh<cr>:w<cr><esc>
 inoremap <Esc> <Esc>:w<CR>
 noremap H ^
 noremap L $
+
 " Tab operation
 nnoremap <leader>l gt
 nnoremap <leader>h gT
+
 " mehotd up
 nmap [[ <Action>(MethodUp)
 nmap ]] <Action>(MethodDown)
@@ -90,18 +89,10 @@ vmap < <Action>(EditorUnindentSelection)
 " moving row"
 nnoremap <C-j> :m +1<CR>
 nnoremap <C-k> :m -2<CR>
-vnoremap <C-j> :m +1<CR>
-vnoremap <C-k> :m -2<CR>
 inoremap <C-j> <Esc>:m +1<CR>gi
 inoremap <C-k> <Esc>:m -2<CR>gi
-"nerdTree"
-
-let g:NERDTreeMapActivateNode='o'
-let g:NERDTreeMapJumpParent='p'
-
-" edit ideavim config
-nnoremap <leader>vv :e ~/.ideavimrc<CR>
-nnoremap <leader>vr :source ~/.ideavimrc<CR>
+vnoremap <C-j> :action MoveStatementDown<CR>
+vnoremap <C-k> :action MoveStatementUp<CR>
 
 
 " Refactorings
@@ -118,8 +109,15 @@ nmap To <Action>(OptimiziImports)
 
 " Closing tabs
 nmap <leader>q :action CloseContent<cr>
-"nmap <leader>Q :action ReopenClosedTab<cr>
 nmap <leader>Q :action CloseAllEditorsButActive<cr>
+
+" edit ideavim config
+nnoremap <leader>vv :e ~/.ideavimrc<CR>
+nnoremap <leader>vr :source ~/.ideavimrc<CR>
+
+" code Run & Debug
+nmap <leader>r :action Run<cr>
+nmap <leader>d :Debug<cr>
 
 " Navigation
 nmap <leader>L :action RecentLocations<cr>
@@ -130,13 +128,14 @@ nmap <leader>f :action GotoFile<cr>
 nmap <leader>c :action GotoClass<cr>
 nmap <leader>s :action GotoSymbol<cr>
 nmap <leader>; :action FileStructurePopup<cr>
-nmap <leader>d :action ShowErrorDescription<cr>
 nmap <leader>I :action SelectIn<cr>
 nmap <leader>e :action RecentFiles<cr>
 nmap <leader>T :action GotoTest<cr>
 nmap <leader>b :action ShowBookmarks<cr>
 
+" multi Cursor
 map <C-N>  <A-N>
 map <C-P>  <A-P>
 map <C-X>  <A-X>
 map g<C-N> <Action>(SelectAllOccurrences)
+nnoremap <C-S-5> :action EditorMatchBrace<CR>
