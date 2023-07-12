@@ -1,3 +1,8 @@
+LWin:: LCtrl
+RWin::
+Send, {vk15sc1F2}
+Return
+
 LCtrl & h::
     Send, {Blind}{Left} ;; Lwin과 h를 방향키 <- 에 매핑한다.
 Return
@@ -5,7 +10,7 @@ Return
 LCtrl & j::
     Send, {Blind}{Down} ;; Lwin과 h를 방향키 <- 에 매핑한다.
 Return
-   
+
 LCtrl & k::
     Send, {Blind}{Up} ;; Lwin과 h를 방향키 <- 에 매핑한다.
 Return
