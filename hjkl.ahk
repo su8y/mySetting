@@ -1,8 +1,8 @@
-LWin:: LCtrl
+LWin::LCtrl
 RWin::
-Send, {vk15sc1F2}
-Return
-
+    Send, {Blind}{vk15sc138}
+    Return
+SC138::RWin
 LCtrl & h::
     Send, {Blind}{Left} ;; Lwin과 h를 방향키 <- 에 매핑한다.
 Return
