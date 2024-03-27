@@ -69,6 +69,7 @@ vmap gC <Action>(CommentByBlockComment)
 
 nmap <leader>mm <Action>(MainMenu)
 " Telescope
+
 nmap <leader>e :NERDTree<CR>
 nmap <leader>/ <Action>(FindInPath)
 nmap <leader>, <Action>(RecentFiles)
@@ -138,11 +139,10 @@ nmap <leader>bb <Action>(ToggleBookmark)
 " nmap <C-j> <Action>(StepOver)
 " nmap <C-k> <Action>(Resume)
 " nmap <C-l> <Action>(ForceStepInto)
-" nmap <C-e> :NERDTree<CR>
 
-
-nmap <leader>cc <Action>(Coverage)
-nmap <leader>cn <Action>(RunCoverage)
+map <C-/> <Action>(ActivateTerminalToolWindow)
+" nmap <leader>cc <Action>(Coverage)
+" nmap <leader>cn <Action>(RunCoverage)
 " run
 nmap <leader>db <Action>(ToggleLineBreakpoint)
 nmap <leader>dc <Action>(DebugClass)
