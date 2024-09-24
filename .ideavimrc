@@ -1,33 +1,28 @@
-" english auto change
-let keep_input_source_in_normal=[ABC]
-let keep_input_source_in_normal=ABC
-set keep-english-in-normal-and-restore-in-insert
-
 let mapleader = " "
-set ignorecase
-set smartcase
-set visualbell
-set number relativenumber
-set ignorecase
-set smartcase
-set noerrorbells
+
+set nu
+set rnu
 set expandtab
 set autoindent
+set cindent
+set smartcase
 set hlsearch
 set incsearch
 set ideajoin
-set mouse=a
 set idearefactormode=keep
-set mousefocus
-set scollfocus
-set scrolloff=0
-set highlightedyank
 
+set mouse=a
+
+" @@@@@@@@ INSTALL PLUGIN @@@@@@@
 set NERDTree
 set multiple-cursors
 set easymotion
 set quickscope
 
+" @@@@@@@@ english auto change @@@@@@@@
+let keep_input_source_in_normal=[ABC]
+let keep_input_source_in_normal=ABC
+set keep-english-in-normal-and-restore-in-insert
 
 " @@@@@@@@@@@ ## Key Mapping ## @@@@@@@@@@@
 
