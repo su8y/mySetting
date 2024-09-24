@@ -24,165 +24,70 @@ set scrolloff=0
 set highlightedyank
 
 set NERDTree
-set surround
 set multiple-cursors
 set easymotion
 set quickscope
-set sneak
-
-" @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" ----------------------------------------------Key Mapping-------------------------------------------------------
-nnoremap L gt
-nnoremap H gT
-
-nnoremap Y y$
-
-" fast move
-nmap ]e <Action>(GotoNextError)
-nmap [e <Action>(GotoPreviousError)
-nmap ]m <Action>(MethodDown)
-nmap [m <Action>(MethodUp)
-
-" Editor indent
-nmap > <S-v><Action>(EditorIndentSelection)
-nmap < <S-v><Action>(EditorUnindentSelection)
-vmap > <Action>(EditorIndentSelection)
-vmap < <Action>(EditorUnindentSelection)
-
-" zen mode
-nmap <leader>z <Action>(ToggleZenMode)
 
 
-nmap gcc <Action>(CommentByLineComment)
-vmap gc <Action>(CommentByLineComment)
+" @@@@@@@@@@@ ## Key Mapping ## @@@@@@@@@@@
 
-nmap gCc <Action>(CommentByBlockComment)
-vmap gC <Action>(CommentByBlockComment)
-
-
-nmap <leader>mm <Action>(MainMenu)
-" Telescope
-
-nmap <leader>e :NERDTree<CR>
-nmap <leader>/ <Action>(FindInPath)
-nmap <leader>, <Action>(RecentFiles)
-nmap <leader><leader> <Action>(GotoFile)
-nmap <leader>ff <Action>(GotoFile)
-nmap <leader>fc <Action>(GotoClass)
-nmap <leader>fs <Action>(GotoSymbol)
-nmap <leader>cs <Action>(FileStructurePopup)
-nmap <leader>cA <Action>(Generate)
-nmap <leader>ca <Action>(ShowIntentionActions)
-nmap <leader>cr <Action>(RenameElement)
-nmap <leader>cf <Action>(ReformatCode)
-nmap <leader>co <Action>(OptimizeImports)
-vmap <leader>cca <Action>(copilot.inlayContextMenu)
-imap <leader>cca <Action>(copilot.inlayContextMenu)
-
-
-" Refactorings
-map <leader>r <Action>(Refactorings.QuickListPopupAction)
-
-"intellij  ShowContextAction
-nmap <leader>sc <Action>(ShowContextAction)
-
-" trash test
-nmap <leader>T <Action>(GotoTest )
-nmap <leader>i <Action>(GotoImplementation)
-nmap <leader>u <Action>(FindUsages)
-
-" goto Error and Declaration"
+" @@@@@@@@@ ESSENTIAL @@@@@@@@
 nmap gr <Action>(GotoDeclaration)
 nmap gi <Action>(GotoImplementation)
 nmap gI <Action>(QuickImplementations)
 nmap gl <Action>(QuickJavaDoc)
-nmap gf <Action>(Forward)
-" erorr
-nmap gy <Action>(ShowErrorDescription)
+nmap K <Action>(ShowHoverInfo)
+nnoremap L gt
+nnoremap H gT
+nnoremap Y y$
 
+" @@@@@@@@ WINDOW @@@@@@@@
+nmap ]e <Action>(GotoNextError)
+nmap [e <Action>(GotoPreviousError)
+nmap <leader>e :NERDTree<CR>
+nmap <leader>/ <Action>(FindInPath)
+nmap <leader>, <Action>(RecentFiles)
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fu <Action>(FindUsages)
+nmap <leader>fc <Action>(GotoClass)
+nmap <leader>fs <Action>(GotoSymbol)
+nmap <leader>ft <Action>(GotoTest)
 
-" moving row"
-nnoremap <M-j> :m +1<CR>
-nnoremap <M-k> :m -2<CR>
-inoremap <M-j> <Esc>:m +1<CR>gi
-inoremap <M-k> <Esc>:m -2<CR>gi
-vnoremap <M-j> <Action>(MoveStatementDown)
-vnoremap <M-k> <Action>(MoveStatementUp)
-nnoremap <M--> <Action>(EditorDecreaseFontSize)
-nnoremap <M-=> <Action>(EditorIncreaseFontSize)
-
+nmap <leader>cs <Action>(FileStructurePopup)
+nmap <C-/> <Action>(ActivateTerminalToolWindow)
 nmap <leader>bb <Action>(ToggleBookmark)
 
-" Closing tabs
-" nmap <leader>q <Action>(CloseContent)
-" nmap <leader>Q <Action>(CloseAllEditorsButActive)
+" @@@@@@@@@@ CODING @@@@@@@@@@@@
+nmap <leader>cA <Action>(Generate)
+nmap <leader>ca <Action>(ShowIntentionActions)
+nmap <leader>cf <Action>(ReformatCode)
+nmap <leader>co <Action>(OptimizeImports)
+nmap <leader>r <Action>(Refactorings.QuickListPopupAction)
+nmap <leader>p <Action>(ParameterInfo)
+
+vmap <leader>cca <Action>(copilot.inlayContextMenu)
+imap <leader>cca <Action>(copilot.inlayContextMenu)
 
 
-" smart key
-" noremap <leader>vf <Action>(IntroduceField)
-" noremap <leader>vp <Action>(IntroduceParameter)
-" noremap <leader>vv <Action>(IntroduceVariable)
-" noremap <leader>vm <Action>(ExtractMethod)
-
-" inoremap <C-Enter> <Action>(Generate)
-" nnoremap <C-Enter> <Action>(Generate)
-
-" debug
-" nmap <C-h> <Action>(StepOut)
-" nmap <C-j> <Action>(StepOver)
-" nmap <C-k> <Action>(Resume)
-" nmap <C-l> <Action>(ForceStepInto)
-
-map <C-/> <Action>(ActivateTerminalToolWindow)
-" nmap <leader>cc <Action>(Coverage)
-" nmap <leader>cn <Action>(RunCoverage)
-" run
+" @@@@@@@@@ DEBUGGING @@@@@@@@@@
 nmap <leader>db <Action>(ToggleLineBreakpoint)
 nmap <leader>dc <Action>(DebugClass)
 nmap <leader>dt <Action>(Stop)
 nmap <leader>do <Action>(StepOut)
 nmap <leader>dO <Action>(StepOver)
 nmap <leader>di <Action>(StepInto)
-" nnoremap <C-;>l <Action>(Run)
-" nnoremap <C-;>m <Action>(Stop)
-" nnoremap <C-;>d <Action>(Debug)
-" nnoremap <C-;>n <Action>(RunClass )
-" nnoremap <C-;>c <Action>(ChooseRunConfiguration )
-" inoremap <C-;>l <Action>(Run)
-" inoremap <C-;>m <Action>(Stop)
-" inoremap <C-;>d <Action>(Debug)
+" nmap <C-k> <Action>(Resume)
+" nmap <C-l> <Action>(ForceStepInto)
+" nmap <leader>cc <Action>(Coverage)
+" nmap <leader>cn <Action>(RunCoverage)
+" nmap <C-k> <Action>(Resume)
+" nmap <C-l> <Action>(ForceStepInto)
 " inoremap <C-;>n <Action>(RunClass )
 " inoremap <C-;>c <Action>(ChooseRunConfiguration )
 
 
-" 뒤로가기
-nnoremap <BS> <C-S-6>
-
-" multi Cursor
+" @@@@@@@@ PLUGIN MULTI CURSOR @@@@@@@@
 map <C-N>  <A-N>
 map <C-P>  <A-P>
 map <C-X>  <A-X>
 map g<C-N> <Action>(SelectAllOccurrences)
-nnoremap <C-S-5> <Action>(EditorMatchBrace)
-
-nnoremap <leader>p <Action>(ParameterInfo)
-" edit ideavim config
-nnoremap <leader>vv :e ~/.ideavimrc<CR>
-nnoremap <leader>vr :source ~/.ideavimrc<CR a>
-
-nmap <leader>1 <Action>(GoToTab1)
-nmap <leader>2 <Action>(GoToTab2)
-nmap <leader>3 <Action>(GoToTab3)
-nmap <leader>4 <Action>(GoToTab4)
-nmap <leader>5 <Action>(GoToTab5)
-nmap <leader>6 <Action>(GoToTab6)
-nmap <leader>7 <Action>(GoToTab7)
-nmap <leader>8 <Action>(GoToTab8)
-nmap <leader>9 <Action>(GoToTab9)
