@@ -8,6 +8,9 @@ set cindent
 set smartcase
 set hlsearch
 set incsearch
+set autoread
+set autowrite
+
 set ideajoin
 set idearefactormode=keep
 
